@@ -20,5 +20,14 @@ class oliver::git {
     mode    => 0755,
     require  => [ Vcsrepo["/home/${username}/simple-sinatra-app"] ],
   }
+
+
+  file { "/home/${username}/simple-sinatra-app/" :
+    ensure  => directory,
+    group   => $username,
+    owner   => $username,
+    mode    => 0777,
+    require  => [ Vcsrepo["/home/${username}/simple-sinatra-app"] ],
+  }
 }
 

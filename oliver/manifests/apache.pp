@@ -27,16 +27,19 @@ class oliver::apache {
   file {'oliver' :
     path => "/etc/apache2/sites-available/oliver.conf",
     content => $str,    
+    require => Package["apache2"],
   }
 
   file {'000-default' :
     path => "/etc/apache2/sites-enabled/000-default.conf",
     ensure => absent,    
+    require => Package["apache2"],
   }
 
   file {'oliver.conf' :
     path => "/etc/apache2/sites-enabled/oliver.conf",
     content => $str,    
     ensure => present,
+    require => Package["apache2"],
   }
 }
