@@ -3,8 +3,8 @@ class oliver::ruby {
     ensure => installed,
   }
 
-  package { 'bundler' :
-    ensure => installed,
-  }
+#  package { 'bundler' :
+#    ensure => installed,
+#  }
 }
 
