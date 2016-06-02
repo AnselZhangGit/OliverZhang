@@ -23,4 +23,11 @@ class oliver::passenger {
     require => Package["libapache2-mod-passenger"],
     notify => Service["apache2"],
   }
+
+  bundler::install { '/home/oliver/simple-sinatra-app/' :
+    user       => 'oliver',
+    group      => 'oliver',
+    deployment => true,
+    require => Package["libapache2-mod-passenger"],
+}
 }

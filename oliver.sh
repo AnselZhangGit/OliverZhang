@@ -1,6 +1,7 @@
 #!/bin/sh
 sudo apt-get install git puppet
 sudo puppet module install puppetlabs/vcsrepo
+puppet module install ploperations-bundler
 git clone https://github.com/AnselZhangGit/OliverZhang.git 
 cd OliverZhang
 sudo cp ./oliver /etc/puppet/modules/ -rf
