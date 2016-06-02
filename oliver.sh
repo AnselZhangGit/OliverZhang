@@ -1,5 +1,7 @@
 #!/bin/sh
-sudo apt-get install git puppet
+sudo apt-get -y update
+sudo apt-get -y install git puppet
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 sudo puppet module install puppetlabs/vcsrepo
 puppet module install ploperations-bundler
 git clone https://github.com/AnselZhangGit/OliverZhang.git 
